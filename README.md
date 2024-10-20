@@ -9,7 +9,7 @@ mRename is a batch file renaming tool designed to simplify the organization of m
 
 ## Installation
 
-To install mRename, you can download the latest version from the [Releases](https://github.com/yourusername/mRename/releases) page. Look for the `.whl` file and install it using pip:
+To install mRename, you can download the latest version from the [Releases](https://github.com/HarexeW/mRename/releases) page. Look for the `.whl` file and install it using pip:
 
 1. Download the latest wheel file from the Releases page.
 2. Install the wheel using pip:

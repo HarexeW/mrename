@@ -1,0 +1,35 @@
+name: Build Wheel
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it's not 'main'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.6'  # Specify your Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install wheel  # Ensure wheel is installed
+
+    - name: Build Wheel
+      run: |
+        python setup.py bdist_wheel
+
+    - name: Upload Wheel
+      uses: actions/upload-artifact@v2
+      with:
+        name: wheel
+        path: dist/*.whl  # Adjust if your wheels are in a different location

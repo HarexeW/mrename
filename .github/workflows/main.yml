@@ -3,7 +3,7 @@ name: Build Wheel
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's not 'main'
+      - master
   pull_request:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.6'  # Specify your Python version
+        python-version: '3.6'
 
     - name: Install dependencies
       run: |
@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: wheel
-        path: dist/*.whl  # Adjust if your wheels are in a different location
+        path: dist/*.whl

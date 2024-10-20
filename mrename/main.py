@@ -6,7 +6,6 @@ import os
 
 from mrename.functions import process_folder
 
-
 @click.command()
 @click.option('--y', default=False, is_flag=True)
 def cli(y):

@@ -14,7 +14,7 @@ def cli(y):
     app_title = align.Align.center(app_title)
     print(app_title)
 
-    app_version = text.Text("Version 0.0.1", style="italic magenta")
+    app_version = text.Text("Version 0.0.2", style="italic magenta")
     app_version = align.Align.center(app_version)
     print(app_version)
     click.echo('')
@@ -36,5 +36,3 @@ def cli(y):
     stats.append(f"Renamed {correct} files. ")
     stats.append(f"{errors} errors.", style="red bold")
     print(stats)
-
-cli()

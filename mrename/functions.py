@@ -3,7 +3,8 @@ import re
 import sys
 
 import click
-from rich import print, text, align, prompt, style
+from rich import print, text, style
+
 
 def get_season():
     pattern = r"Season\s+(\d+)"
@@ -51,8 +52,8 @@ def rename_file(file, season, episode):
 
     os.rename(file, new_file)
 
-def move_file(file):
-    folder = os.getcwd() + "/temp"
+def move_file(file, current_folder=None):
+    folder = os.getcwd() if current_folder is None else current_folder
 
     try:
         os.mkdir(folder + "/err")
@@ -71,7 +72,9 @@ def move_file(file):
     os.rename(file, new_file)
 
 def process_folder():
-    from mrename.detection import get_handler
+    from mrename.detection import get_pattern
+    from mrename.handlers import handle_rename
+
     folder = os.getcwd()
 
     correct = 0
@@ -83,13 +86,18 @@ def process_folder():
         if os.path.isdir(path):
             continue
 
-        handler = get_handler(file)
-        if handler is None:
+        pattern = get_pattern(file)
+        if pattern is None:
             move_file(path)
             errors = errors + 1
             continue
 
-        handler(path)
+        handle_rename(
+            pattern=pattern['pattern'],
+            file=path,
+            has_season=pattern['has_season']
+        )
+
         correct = correct + 1
 
     return correct, errors

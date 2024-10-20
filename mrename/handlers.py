@@ -13,10 +13,12 @@ def handle_rename(pattern, file, has_season):
             file,
             int(match.group(1)),
             int(match.group(2)),
+            match.group(3)
         )
     else:
         return rename_file(
             file,
             None,
             int(match.group(1)),
+            match.group(3)
         )

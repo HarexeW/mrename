@@ -33,13 +33,13 @@ def get_season():
 
     return season
 
-def rename_file(file, season, episode):
+def rename_file(file, season, episode, file_extension):
     if season is None:
         season = get_season()
 
     folder_path = os.path.dirname(file)
 
-    new_filename = f"S{str(season).zfill(2)}E{str(episode).zfill(2)}.mkv"
+    new_filename = f"S{str(season).zfill(2)}E{str(episode).zfill(2)}.{file_extension}"
     new_file = os.path.join(folder_path, new_filename)
     old_filename = os.path.basename(file)
 

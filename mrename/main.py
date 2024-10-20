@@ -13,7 +13,7 @@ def cli(y):
     app_title = align.Align.center(app_title)
     print(app_title)
 
-    app_version = text.Text("Version 0.0.2", style="italic magenta")
+    app_version = text.Text("Version 0.0.3", style="italic magenta")
     app_version = align.Align.center(app_version)
     print(app_version)
     click.echo('')

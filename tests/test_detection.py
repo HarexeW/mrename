@@ -1,10 +1,10 @@
 from mrename.detection import get_pattern
 
 patterns = [
-    r".*?S(\d+)\s*E(\d+)\.[a-zA-Z0-9]+.*",
-    r".*?S(\d+)\s*x\s*E(\d+)\.[a-zA-Z0-9]+.*",
-    r".*?S(\d+)\s*-\s*E(\d+)\.[a-zA-Z0-9]+.*",
-    r".*?(\d+)x(\d+)\.[a-zA-Z0-9]+.*",
+    r".*?S(\d+)\s*E(\d+)\.([a-zA-Z0-9]+).*",
+    r".*?S(\d+)\s*x\s*E(\d+)\.([a-zA-Z0-9]+).*",
+    r".*?S(\d+)\s*-\s*E(\d+)\.([a-zA-Z0-9]+).*",
+    r".*?(\d+)x(\d+)\.([a-zA-Z0-9]+).*",
     r".*[Ee](\d+)(?=\.[a-zA-Z0-9]+$)",
     r".*?(\d+)(?=\.[a-zA-Z0-9]+$)"
 ]

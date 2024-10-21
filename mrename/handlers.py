@@ -20,5 +20,5 @@ def handle_rename(pattern, file, has_season):
             file,
             None,
             int(match.group(1)),
-            match.group(3)
+            match.group(2)
         )

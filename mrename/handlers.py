@@ -4,6 +4,8 @@ from mrename.exceptions import MatchNotFoundError
 from mrename.functions import rename_file
 
 def handle_rename(pattern, file, has_season):
+    print(pattern)
+    print(file)
     match = re.search(pattern, file)
     if match is None:
         raise MatchNotFoundError("Season and Episode Number not found.")

@@ -18,11 +18,11 @@ patterns = [
         'has_season': True
     },  #*x*.*
     {
-        'pattern': r".*[Ee](\d+)(?=\.[a-zA-Z0-9]+$)",
+        'pattern': r".*[Ee](\d+)\.([a-zA-Z0-9]+)$",
         'has_season': False
     },  #E*.*
     {
-        'pattern': r".*?(\d+)(?=\.[a-zA-Z0-9]+$)",
+        'pattern': r".*?(\d+)\.([a-zA-Z0-9]+)$",
         'has_season': False
     }  #*.*
 ]
